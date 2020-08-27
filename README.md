@@ -41,5 +41,4 @@
 ### 3. 기타
 
 - 개발 과정 내용 기록
-    - Notion으로 관리 (진행)
-      https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300
+    - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
