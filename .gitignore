@@ -81,4 +81,7 @@ buildNumber.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
+### DB Config file ###
+dbconfig.properties
+
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,maven
