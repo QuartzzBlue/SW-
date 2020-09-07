@@ -46,10 +46,28 @@ local.properties
 .texlipse
 
 # STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
 .springBeans
+.sts4-cache
 
 # Code Recommenders
 .recommenders/
+
+# Annotation Processing
+.apt_generated/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
 
 # Annotation Processing
 .apt_generated/
@@ -78,10 +96,20 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
 ### DB Config file ###
 dbconfig.properties
+
+### Spring Boot 환경설정파일 ###
+application.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,maven
