@@ -1,13 +1,13 @@
-package com.quartz.boot_settingweb;
+package com.quartz.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BootSettingwebApplication {
+public class BootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BootSettingwebApplication.class, args);
+		SpringApplication.run(BootApplication.class, args);
 	}
 
 }

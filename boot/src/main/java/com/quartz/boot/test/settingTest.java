@@ -1,4 +1,4 @@
-package com.quartz.boot_settingweb.test;
+package com.quartz.boot.test;
 
 import java.util.ArrayList;
 import java.util.List;

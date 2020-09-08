@@ -1,10 +1,10 @@
-package com.quartz.boot_settingweb;
+package com.quartz.boot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BootSettingwebApplicationTests {
+class BootApplicationTests {
 
 	@Test
 	void contextLoads() {
