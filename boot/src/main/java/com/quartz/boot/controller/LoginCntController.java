@@ -29,7 +29,6 @@ public class LoginCntController {
 			list = reqInfoService.selectLCByYear(year);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-//			response.put("isSuccess", false);
 		}
 		
 		response.put("totCnt", list.size());

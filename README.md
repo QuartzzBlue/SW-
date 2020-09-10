@@ -81,3 +81,54 @@
 - 개발 과정 내용 기록
     - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
         - 1주차 정리 완료
+
+
+---
+
+## 3주차 주간보고
+
+### 1. 기반 지식 이해
+
+- **스프링 프레임워크 구조 및 흐름** (진행)
+
+    ⇒ [링크](https://www.notion.so/seul95/Spring-Framework-e40549d4a80945b1ab1fade4ce9f999a) 에서 확인
+
+- **HTTP 프로토콜 및 REST 아키텍쳐** (완료)
+
+    ⇒ [링크](https://www.notion.so/seul95/HTTP-REST-b4cc1e58c5c64d539b4952630016c700) 에서 확인
+
+### 2. 테스트 통계 API 구현
+
+- **샘플 데이터 생성**
+    - `statistc` 스키마 생성 (완료)
+    - 요청 정보, 요청 코드 및 사용자 테이블 생성 (완료)
+    - 샘플 데이터 생성 (완료)
+
+        → 추후 랜덤 데이터 추가 생성 예정
+
+- **스프링 부트 환경설정**
+    - [Spring.io](http://spring.io) 활용하여 라이브러리 의존성 설정 (완료)
+
+        ⇒ Tomcat, MariaDB Driver, JSTL 라이브러리 의존성 수동 추가
+
+    - 환경 설정 파일 작성 (완료)
+        - DB 환경 설정
+        - View Resolver 설정
+        - Server 설정
+        
+- **RestController를 활용하여 년도별 총 로그인 수 API 구현**
+    - Service, Mapper, VO 생성 (완료)
+        - DAO 대신 Mapper 인터페이스 활용
+    - Mapper.xml 작성 (완료)
+        - MyBatis 동적 쿼리 사용
+        - SUBSTR() 함수 활용하여 년도별 데이터 추출
+    - Controller 구현 (완료)
+        - RestController를 활용하여 응답 바디 JSON 형태로 리턴
+    - POSTMAN으로 응답 확인 (완료)
+
+### 3. 기타
+
+- 개발 진행 과정 기록
+    - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
+        - 1주차 정리 완료
+        - 2주차 정리 완료

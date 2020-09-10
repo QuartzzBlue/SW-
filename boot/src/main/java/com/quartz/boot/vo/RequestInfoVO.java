@@ -1,6 +1,5 @@
 package com.quartz.boot.vo;
 
-import org.springframework.stereotype.Component;
 
 public class RequestInfoVO {
 	
