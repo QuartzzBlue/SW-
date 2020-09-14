@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.quartz.boot.vo.RequestInfoVO;
+import com.quartz.boot.vo.Term;
 
 
 /* 마이바티스는 데이터 접근 객체인 DAO를 생성하는 것보다 
@@ -13,7 +14,10 @@ import com.quartz.boot.vo.RequestInfoVO;
 
 @Mapper
 public interface ReqInfoMapper {
-		
 	List<RequestInfoVO> selectLCByYear(String yy) throws Exception;
-
+	List<RequestInfoVO> selectLCByMonthByDept(Term term) throws Exception;
+	List<RequestInfoVO> selectLCByMonthDayAvg(Term term) throws Exception;
+	List<RequestInfoVO> selectLCByMonthExcHoliday(Term term) throws Exception;
+	List<RequestInfoVO> selectCUByday(Term term) throws Exception;
+	
 }
