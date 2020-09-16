@@ -10,8 +10,77 @@
 		<where>
 			requestCode = 'L'
 			<if test='year != null and year != ""'>
-			 AND SUBSTR(createDate, 1, 2) = #{year}
+			 AND SUBSTR(createDate, 1, 4) = #{year}
 			</if>
 		</where>
 	</select>
+	
+	<select id="selectCUByday" resultType="IntResponseVO"
+											parameterType="Term">
+		SELECT SUBSTR(createDate, 1, 8) AS date, COUNT(DISTINCT(userID)) AS cnt
+		FROM REQUESTINFO
+		<where>
+		    requestCode = 'L' 
+		    <if test='startDate != null and startDate != "" and endDate != null and endDate != ""'>
+			AND createDate BETWEEN #{startDate} AND #{endDate}
+			</if>
+		</where>
+		GROUP BY SUBSTR(createDate, 1, 8)
+		ORDER BY SUBSTR(createDate, 1, 8);
+	</select>
+	
+	<select id="selectDayAvgLCByMonth" resultType="DoubleResponseVO"
+											parameterType="Term">
+		SELECT SUBSTR(loginDay, 1, 6) AS date, AVG(loginCnt) AS cnt
+		FROM(
+			SELECT SUBSTR(createDate, 1, 8) AS loginDay, COUNT(*) AS loginCnt
+			FROM REQUESTINFO
+			<where>
+			    requestCode = 'L' 
+			    <if test='startDate != null and startDate != "" and endDate != null and endDate != ""'>
+				AND createDate BETWEEN #{startDate} AND #{endDate}
+				</if>
+			</where>
+			GROUP BY SUBSTR(createDate, 1, 8)
+			ORDER BY SUBSTR(createDate, 1, 8)
+		) AS tmp
+		GROUP BY SUBSTR(loginDay, 1, 6);
+	</select>
+	
+	<select id="selectExcOffDayLCByMonth" resultType="IntResponseVO"
+											parameterType="Term">
+		SELECT SUBSTR(createDate, 1, 6) AS date, COUNT(*) AS cnt
+		FROM (
+			SELECT createDate, dayofweek(SUBSTR(createDate, 1, 8)) AS weekday
+			FROM REQUESTINFO
+			<where>
+			    requestCode = 'L' 
+			    <if test='startDate != null and startDate != "" and endDate != null and endDate != ""'>
+				AND createDate BETWEEN #{startDate} AND #{endDate}
+				</if>
+			</where>
+		) AS tmp
+		WHERE weekday != 1 AND weekday != 7
+		GROUP BY SUBSTR(createDate, 1, 6)
+		ORDER BY date;
+	</select>
+	
+	<select id="selectDeptLCByMonth" resultType="DeptLCResponseVO"
+											parameterType="String">
+		SELECT * , RANK() OVER (ORDER BY totalLoginCnt DESC) AS deptRank
+		FROM (
+			SELECT u.HR_DEPT, COUNT(*) AS totalLoginCnt
+			FROM REQUESTINFO AS r, USER AS u
+			<where>
+			r.userID = u.userID
+			AND requestCode = 'L'
+			<if test='month != null and month != ""'>
+				AND SUBSTR(createDate, 1, 6) = #{month}
+			</if>
+			</where>
+			GROUP BY u.HR_DEPT
+		) AS counts
+		ORDER BY deptRank;
+	</select>
+	
 </mapper>

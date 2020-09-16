@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.quartz.boot.vo.DeptLCResponseVO;
+import com.quartz.boot.vo.DoubleResponseVO;
+import com.quartz.boot.vo.IntResponseVO;
 import com.quartz.boot.vo.RequestInfoVO;
 import com.quartz.boot.vo.Term;
 
@@ -15,9 +18,9 @@ import com.quartz.boot.vo.Term;
 @Mapper
 public interface ReqInfoMapper {
 	List<RequestInfoVO> selectLCByYear(String yy) throws Exception;
-	List<RequestInfoVO> selectLCByMonthByDept(Term term) throws Exception;
-	List<RequestInfoVO> selectLCByMonthDayAvg(Term term) throws Exception;
-	List<RequestInfoVO> selectLCByMonthExcHoliday(Term term) throws Exception;
-	List<RequestInfoVO> selectCUByday(Term term) throws Exception;
+	List<DeptLCResponseVO> selectDeptLCByMonth(String yyMM) throws Exception;
+	List<DoubleResponseVO> selectDayAvgLCByMonth(Term term) throws Exception;
+	List<IntResponseVO> selectExcOffDayLCByMonth(Term term) throws Exception;
+	List<IntResponseVO> selectCUByday(Term term) throws Exception;
 	
 }

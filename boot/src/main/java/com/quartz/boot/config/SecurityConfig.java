@@ -37,7 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		//https://docs.spring.io/spring-security/site/docs/4.0.0.RELEASE/reference/pdf/spring-security-reference.pdf
 		auth
 			.inMemoryAuthentication()
-			.withUser("test").password("test").roles("USER"); 
+			.withUser("test").password("{noop}test").roles("USER"); 
 		
 	}
 

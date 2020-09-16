@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class RequestInfoVO {
 	
-
 	private Long requestID;
 	@Setter 
 	private String requestCode;
@@ -18,14 +19,5 @@ public class RequestInfoVO {
 	private String userID;
 	@Setter 
 	private String createDate;
-	
-
-	@Override
-	public String toString() {
-		return "RequestInfoVO [requestID=" + requestID + ", requestCode=" + requestCode + ", userID=" + userID
-				+ ", createDate=" + createDate + "]";
-	}
-	
-	
 	
 }

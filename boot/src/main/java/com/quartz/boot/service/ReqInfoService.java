@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.quartz.boot.mapper.ReqInfoMapper;
+import com.quartz.boot.vo.DeptLCResponseVO;
+import com.quartz.boot.vo.DoubleResponseVO;
+import com.quartz.boot.vo.IntResponseVO;
 import com.quartz.boot.vo.RequestInfoVO;
 import com.quartz.boot.vo.Term;
 
@@ -20,19 +23,19 @@ public class ReqInfoService {
 		return reqInfoMapper.selectLCByYear(yy);
 	}
 	
-	public List<RequestInfoVO> selectLCByMonthByDept(Term term) throws Exception {
-		return reqInfoMapper.selectLCByMonthByDept(term);
+	public List<DeptLCResponseVO> selectDeptLCByMonth(String yyMM) throws Exception {
+		return reqInfoMapper.selectDeptLCByMonth(yyMM);
 	}
 
-	public List<RequestInfoVO> selectLCByMonthDayAvg(Term term) throws Exception{
-		return reqInfoMapper.selectLCByMonthDayAvg(term);
+	public List<DoubleResponseVO> selectDayAvgLCByMonth(Term term) throws Exception{
+		return reqInfoMapper.selectDayAvgLCByMonth(term);
 	}
 	
-	public List<RequestInfoVO> selectLCByMonthExcHoliday(Term term) throws Exception{
-		return reqInfoMapper.selectLCByMonthExcHoliday(term);
+	public List<IntResponseVO> selectExcOffDayLCByMonth(Term term) throws Exception{
+		return reqInfoMapper.selectExcOffDayLCByMonth(term);
 	}
 	
-	public List<RequestInfoVO> selectCUByday(Term term) throws Exception{
+	public List<IntResponseVO> selectCUByday(Term term) throws Exception{
 		return reqInfoMapper.selectCUByday(term);
 	}
 }
