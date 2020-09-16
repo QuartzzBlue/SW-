@@ -90,12 +90,9 @@
 ### 1. 기반 지식 이해
 
 - **스프링 프레임워크 구조 및 흐름** (진행)
-
-    ⇒ [링크](https://www.notion.so/seul95/Spring-Framework-e40549d4a80945b1ab1fade4ce9f999a) 에서 확인
-
+⇒ [링크](https://www.notion.so/seul95/Spring-Framework-e40549d4a80945b1ab1fade4ce9f999a) 에서 확인
 - **HTTP 프로토콜 및 REST 아키텍쳐** (완료)
-
-    ⇒ [링크](https://www.notion.so/seul95/HTTP-REST-b4cc1e58c5c64d539b4952630016c700) 에서 확인
+⇒ [링크](https://www.notion.so/seul95/HTTP-REST-b4cc1e58c5c64d539b4952630016c700) 에서 확인
 
 ### 2. 테스트 통계 API 구현
 
@@ -103,19 +100,14 @@
     - `statistc` 스키마 생성 (완료)
     - 요청 정보, 요청 코드 및 사용자 테이블 생성 (완료)
     - 샘플 데이터 생성 (완료)
-
-        → 추후 랜덤 데이터 추가 생성 예정
-
+    → 추후 랜덤 데이터 추가 생성 예정
 - **스프링 부트 환경설정**
     - [Spring.io](http://spring.io) 활용하여 라이브러리 의존성 설정 (완료)
-
-        ⇒ Tomcat, MariaDB Driver, JSTL 라이브러리 의존성 수동 추가
-
+    ⇒ Tomcat, MariaDB Driver, JSTL 라이브러리 의존성 수동 추가
     - 환경 설정 파일 작성 (완료)
         - DB 환경 설정
         - View Resolver 설정
         - Server 설정
-        
 - **RestController를 활용하여 년도별 총 로그인 수 API 구현**
     - Service, Mapper, VO 생성 (완료)
         - DAO 대신 Mapper 인터페이스 활용
@@ -132,3 +124,55 @@
     - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
         - 1주차 정리 완료
         - 2주차 정리 완료
+
+
+---
+
+
+## 4주차 주간보고
+
+### 1. Basic Auth 구현
+
+- **Spring Security 이해 및 정리 (완료)**
+⇒ [링크](https://www.notion.so/seul95/Spring-Security-4ca0e4152bc14890835c9981e8ac9cb1) 에서 확인
+- **임시 Basic Auth 구현 (완료)**
+→ 하드코딩으로 구현, 추후 디벨롭 예정
+
+### 2. 통계 API 구현
+
+- **SQL문 작성**
+→  files 폴더 `sql_api_final.sql` 에서 확인 가능
+    - 일자 별 접속자 수 SQL문 작성 (완료)
+    - 하루 평균 로그인 수 SQL문 작성 (완료)
+    - 휴일을 제외한 로그인 수 SQL문 작성 (완료)
+    - 부서 별 로그인 수 SQL문 작성 (완료)
+- **SQL문 테스트 (완료)**
+- **RestController를 활용하여 API 구현**
+    - Service, Mapper, VO 생성 (완료)
+        - Lombok 라이브러리 활용하여 VO 메서드 생성
+        - DAO 대신 Mapper 인터페이스 활용
+    - Mapper.xml 작성 (완료)
+    - Controller 구현 (완료)
+        - RestController를 활용하여 응답 바디 JSON 형태로 리턴
+        - API URI 수정
+            - URI Version 1 → Version 2로 수정
+            → ex) https://quartz.com/api/v2/access-cnt/day
+    - POSTMAN으로 응답 확인 (완료)
+- **API 가이드 문서 수정 및 업로드**
+→ files 폴더 `4주차_API가이드문서.pdf` 에서 확인 가능
+    - API 가이드 문서 수정 및 보완 (완료)
+    - Repository 업로드 (완료)
+
+### 3. API 응답 값을 Excel 파일로 다운로드
+
+- **Apache POI 라이브러리 적용 (완료)**
+- **응답 값을 Excel 파일로 다운로드 할 수 있도록 poi 클래스 작성 (완료)**
+- **정상 작동 확인 (완료)**
+
+### 4. 기타
+
+- 개발 진행 과정 기록
+    - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
+        - 1주차 정리 완료
+        - 2주차 정리 완료
+        - 3주차 정리 완료
