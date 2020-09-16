@@ -39,9 +39,9 @@ public class Poi {
 				cell.setCellValue(vo.getDeptRank());
 				row = sheet.createRow(++rowIdx);
 				cell = row.createCell(1);
-				cell.setCellValue("HR_DEPT");
+				cell.setCellValue("deptName");
 				cell = row.createCell(2);
-				cell.setCellValue(vo.getHR_DEPT());
+				cell.setCellValue(vo.getDeptName());
 				row = sheet.createRow(++rowIdx);
 				cell = row.createCell(1);
 				cell.setCellValue("totalLoginCnt");
@@ -79,6 +79,7 @@ public class Poi {
 			}
 		}
 	}
+	
 	public void writeExcel(HashMap<String, Object> map) {
 		this.map = map;
 		// 새 엑셀 파일 생성
@@ -100,7 +101,7 @@ public class Poi {
 			
 		}
 		
-		if((int)map.get("data-size") != 0) {
+		if((int)map.get("dataSize") != 0) {
 			Object dataType =((ArrayList) map.get("data")).get(0);		
 			writeData(dataType, rowIdx);
 		}

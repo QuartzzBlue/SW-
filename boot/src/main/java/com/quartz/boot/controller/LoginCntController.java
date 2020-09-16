@@ -63,9 +63,9 @@ public class LoginCntController {
 			list = reqInfoService.selectDayAvgLCByMonth(term);
 			response.put("status", "200");
 			response.put("description", "월별 일평균 로그인 수");
-			response.put("begin-month", beginMonth);
-			response.put("end-month", endMonth);
-			response.put("data-size", list.size());
+			response.put("beginMonth", beginMonth);
+			response.put("endMonth", endMonth);
+			response.put("dataSize", list.size());
 			response.put("data", list);
 		} catch (Exception e) {
 			
@@ -90,9 +90,9 @@ public class LoginCntController {
 			list = reqInfoService.selectExcOffDayLCByMonth(term);
 			response.put("status", "200");
 			response.put("description", "월별 휴일 제외 로그인 수");
-			response.put("begin-month", beginMonth);
-			response.put("end-month", endMonth);
-			response.put("data-size", list.size());
+			response.put("beginMonth", beginMonth);
+			response.put("endMonth", endMonth);
+			response.put("dataSize", list.size());
 			response.put("data", list);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -114,9 +114,10 @@ public class LoginCntController {
 			response.put("status", "200");
 			response.put("description", "월별 부서 로그인 수");
 			response.put("month", month);
-			response.put("data-size", list.size());
+			response.put("dataSize", list.size());
 			response.put("data", list);
-
+			System.out.println(list.toString());
+			System.out.println(response.toString());
 		} catch (Exception e) {
 			
 			e.printStackTrace();

@@ -69,7 +69,7 @@
 											parameterType="String">
 		SELECT * , RANK() OVER (ORDER BY totalLoginCnt DESC) AS deptRank
 		FROM (
-			SELECT u.HR_DEPT, COUNT(*) AS totalLoginCnt
+			SELECT u.HR_DEPT AS deptName, COUNT(*) AS totalLoginCnt
 			FROM REQUESTINFO AS r, USER AS u
 			<where>
 			r.userID = u.userID

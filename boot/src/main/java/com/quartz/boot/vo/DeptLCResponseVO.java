@@ -14,7 +14,7 @@ import lombok.ToString;
 @ToString
 public class DeptLCResponseVO{
 	@JsonProperty
-	private String HR_DEPT;
+	private String deptName;
 	@JsonProperty
 	private int totalLoginCnt;
 	@JsonProperty

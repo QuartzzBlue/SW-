@@ -3,8 +3,10 @@ package com.quartz.boot.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,6 +27,10 @@ public class AccessCntController {
 	@Autowired
 	private Poi poi;
 	
+	@Pattern(regexp = "^[0-9]{6}$")
+	private static String valid_regex;
+
+	
 	//일별 접속자 수
 	@RequestMapping(value = "/day", method = RequestMethod.GET)
 	public HashMap<String, Object> getCUbyDay(
@@ -38,9 +44,9 @@ public class AccessCntController {
 			list = reqInfoService.selectCUByday(term);
 			response.put("status", "200");
 			response.put("description", "일별 접속자 수");
-			response.put("begin-month", beginMonth);
-			response.put("end-month", endMonth);
-			response.put("data-size", list.size());
+			response.put("beginMonth", beginMonth);
+			response.put("endMonth", endMonth);
+			response.put("dataSize", list.size());
 			response.put("data", list);
 //			for(AccessCntResponseVO a : list) {
 //				System.out.println(a.toString());
