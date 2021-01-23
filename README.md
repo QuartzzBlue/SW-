@@ -44,6 +44,7 @@
     - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
 
 
+
 ---
 
 ## 2주차 주간보고
@@ -81,6 +82,7 @@
 - 개발 과정 내용 기록
     - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
         - 1주차 정리 완료
+
 
 
 ---
@@ -124,6 +126,7 @@
     - [Notion](https://www.notion.so/seul95/_-7aa48417b5c647738809afc1c78b7300)으로 관리 (진행)
         - 1주차 정리 완료
         - 2주차 정리 완료
+
 
 
 ---
